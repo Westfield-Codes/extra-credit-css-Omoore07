@@ -12,7 +12,7 @@
         height:450px;
         margin:auto;
         border-radius:40px;
-         box-shadow: 15px 15px 10px 12px #666;
+        box-shadow: 15px 15px 10px 12px #666;
       }
 
       h1 {
@@ -26,7 +26,7 @@
         height:33%;
         border-radius:40px 40px 0px 0px;
         margin-top:-130px;
-        font-family:Arial, Helvetica, sans-serif;
+        font-family:sans-serif;
         
         
       }
@@ -43,7 +43,7 @@
         font-size:45px;
         margin:210px;
         margin-top:-60px;
-        font-family:Arial, Helvetica, sans-serif;
+        font-family:sans-serif;
       }
 
 
@@ -66,16 +66,14 @@
        
       }
 
-      .text-box{
-        border-bottom:black solid 1px;
-      }
+      
 
       .button {
       display: inline-block;
       padding: 15px 25px;
       font-size: 24px;
       cursor: pointer;
-      text-align: center;
+      margin-left:-40px;
       text-decoration: none;
       color: #000000;
       border: black solid 1px;
@@ -99,6 +97,17 @@
 
 
 </style>
+
+<script>
+	function getName() {
+		let myInput=document.getElementById("name-entry");
+		let myName=myInput.value;
+		myInput.remove();
+		let printName=document.getElementById("text-box");
+		printName.innerHTML="<h1>"+myName+"</h1>";
+	}
+</script>
+
   </head>
   <body>
      <h1>Instructions</h1>
@@ -109,8 +118,8 @@
       </div>
       <div class="middle">
           <h2> My Name Is</h2>
-          <div class="text-box">
-          <input type="text">
+          <div id="text-box">
+          <input id="name-entry" type="text">
           
           </div>
               </div>
@@ -122,7 +131,7 @@
 
   </div>
   <div class="save">
-<button class="button"> Save </button>
+<button onclick="getName()" class="button"> Save </button>
 </div>
 
 
